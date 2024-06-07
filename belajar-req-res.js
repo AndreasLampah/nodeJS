@@ -7,10 +7,12 @@ const port = 3000;
 let server = http.createServer(function (request, respon) {
     if (request.url == "/") {
         respon.writeHead(200, {"Content-Type" : "text/html"});
+        // fs untuk membuat file terpisah
         fs.createReadStream("./view/utama.html").pipe(respon);
 
     } else if (request.url == "/beranda") {
         respon.writeHead(200, {"Content-Type" : "text/html"});
+        // fs untuk membuat file terpisah
         fs.createReadStream("./view/beranda.html").pipe(respon);
        
     } else if (request.url == "/profil") {
